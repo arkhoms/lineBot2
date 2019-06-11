@@ -15,6 +15,7 @@ def webhook():
 
 @app.route('/callback', methods=['POST'])
 def callback():
+    text='งง'
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
