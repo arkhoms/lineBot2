@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-import json
+#import json
 #import requests
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ def callback():
     #id=[d['replyToken'] for d in user][0]
     #print(json_line)
     print("ผู้ใช้：",user)
-#    sendText(user,'งง') # ส่งข้อความ งง
+    sendText(user,'งง') # ส่งข้อความ งง
     return '',200
 
 def sendText(user, text):
@@ -30,7 +30,7 @@ def sendText(user, text):
   Authorization = 'Bearer bNSZWdvzwydRYzhK14gMTbhCuYThxxXGoP+78YvKw5wOFsOiFh11bEcbJjvB7UORayyWvkZtjZKcBiqQHpr79VgdCS4UBG5m38NSiNhCX0Vw6scv/QDB5DUHo6zVhGY449Basd6Y5Em+KzasZtxErgdB04t89/1O/w1cDnyilFU=' # ใส่ ENTER_ACCESS_TOKEN เข้าไป
   headers = {
       'Content-Type': 'application/json; charset=UTF-8',
-      'Authorization':Authorization
+      'Authorization': Authorization
   }
   data = json.dumps({
       "replyToken":user,
