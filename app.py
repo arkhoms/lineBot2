@@ -30,10 +30,10 @@ def callback():
         'Content-Type': 'application/json; charset=UTF-8',
         'Authorization': Authorization
     }
-#    data = json.dumps({
-#        "replyToken":user,
-#        "messages":[{"type":"text","text":text}]
-#    })
+    data = json.dumps({
+        "replyToken":user,
+        "messages":[{"type":"text","text":text}]
+    })
 #    r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
     return '',200
 
