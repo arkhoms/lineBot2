@@ -29,7 +29,7 @@ def sendText(user, text):
   Authorization = os.environ['Authorization'] # ใส่ ENTER_ACCESS_TOKEN เข้าไป
   headers = {
     'Content-Type': 'application/json; charset=UTF-8',
-    'Authorization': Authorization
+    'Authorization': os.environ['Authorization']
   }
   data = json.dumps({
     "replyToken":user,
