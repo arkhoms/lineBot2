@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import os
 import json
 import requests
 
@@ -6,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    a=ENV['Authorization']
+    a=os.environ['Authorization']
     return "สวัสดีครับ"
 
 @app.route("/webhook", methods=['POST'])
