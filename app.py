@@ -10,7 +10,7 @@ def index():
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
-    if request.method === 'POST':
+    if request.method == 'POST':
         return "OK"
 
 @app.route('/callback', methods=['POST'])
