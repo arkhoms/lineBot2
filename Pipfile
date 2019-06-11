@@ -7,7 +7,7 @@ name = "pypi"
 gunicorn = "*"
 flask = "*"
 requests = "*"
-line-bot-sdk-python = "*"
+line-bot-sdk = "*"
 
 [dev-packages]
 
