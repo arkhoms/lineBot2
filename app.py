@@ -1,4 +1,6 @@
 from flask import Flask
+import json
+import requests
 
 app = Flask(__name__)
 
@@ -13,7 +15,7 @@ def webhook():
 
 @app.route('/callback', methods=['POST'])
 def callback():
-    json_line = request.get_json()
+#    json_line = request.get_json()
 #    json_line = json.dumps(json_line)
 #    decoded = json.loads(json_line)
 #    user = decoded["events"][0]['replyToken']
