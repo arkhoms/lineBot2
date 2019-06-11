@@ -33,7 +33,7 @@ def sendText(user, text):
   data = json.dumps({
       "replyToken":user,
       "messages":[{"type":"text","text":text}]})
-    r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
+  r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
 
 if __name__ == '__main__':
     app.run()
