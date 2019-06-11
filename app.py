@@ -21,7 +21,8 @@ def callback():
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
-    sendText(user,'สวัสดี')
+    userText = decoded["events"][0]['message']['text']
+    sendText(user,userText)
     return '',200
 
 def sendText(user, text):
