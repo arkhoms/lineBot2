@@ -19,7 +19,7 @@ def callback():
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
-    sendText(user,'งง')
+    sendText(user,ENV['Authorization'])
     return '',200
 
 def sendText(user, text):
