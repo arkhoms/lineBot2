@@ -34,7 +34,7 @@ def callback():
         "replyToken":user,
         "messages":[{"type":"text","text":text}]
     })
-    r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
+#    r = requests.post(LINE_API, headers=headers, data=data) # ส่งข้อมูล
     return '',200
 
 def sendText(user, text):
