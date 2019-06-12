@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    a=os.environ['Authorization']
+    a=os.environ['CHANNEL_ACCESS_TOKEN']
     return a
 
 @app.route("/webhook", methods=['POST'])
