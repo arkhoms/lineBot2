@@ -23,7 +23,7 @@ def index():
 
 @app.route("/callback", methods=['POST'])
 def callback():
-    return "ok"
+#    return "ok"
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
 
