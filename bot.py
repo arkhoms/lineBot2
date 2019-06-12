@@ -18,8 +18,7 @@ handler = WebhookHandler(os.environ['CHANNEL_SECRET'])
 
 @app.route('/')
 def index():
-    input("slsl")
-    return "LL"
+    return "Hello World สวัสดีชาวโลก"
 
 @app.route("/callback", methods=['POST'])
 def callback():
