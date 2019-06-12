@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    a=os.getenv['Authorization']
+    a=os.environ['Authorization']
     return a
 
 @app.route("/webhook", methods=['POST'])
