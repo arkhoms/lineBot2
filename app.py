@@ -29,13 +29,15 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
-    user = decoded["events"][0]['replyToken']
-    userText = decoded["events"][0]['message']['text']
+#    user = decoded["events"][0]['replyToken']
+#    userText = decoded["events"][0]['message']['text']
+    user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
+    userText = decoded['queryResult']['intent']['displayName']
 #    sendText(user,userText)
     try:
         f = open("my_file.txt", "r")
         for line in f.readlines():
-#            sendText(user,line)
+            sendText(user,line)
         f.close()
     except Exception:
         sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
