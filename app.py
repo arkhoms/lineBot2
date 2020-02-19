@@ -31,7 +31,15 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded["events"][0]['replyToken']
     userText = decoded["events"][0]['message']['text']
-    sendText(user,userText)
+#    sendText(user,userText)
+    try:
+        f = open("my_file.txt", "r")
+        for line in f.readlines():
+#            sendText(user,line)
+        f.close()
+    except Exception:
+        sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
+    
     return '',200
 
 def sendText(user, text):
