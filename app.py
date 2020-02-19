@@ -8,6 +8,13 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a=os.environ['Authorization']
+    try:
+        f = open("my_file.txt", "r")
+        for line in f.readlines():
+            print(line)
+        f.close()
+    except Exception:
+        print("Could not read to file")
     return "นายอาคม สุวรรณประเสริฐ เลขที่ 0 ชั้น ม.4/3"
 
 @app.route("/webhook", methods=['POST'])
