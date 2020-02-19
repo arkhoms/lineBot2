@@ -33,15 +33,15 @@ def callback():
 #    userText = decoded["events"][0]['message']['text']
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
-    sendText(user,"ไม่บ้าน้าาา")
+#    sendText(user,"ไม่บ้าน้าาา")
 #    sendText(user,userText)
-#    try:
-#        f = open("my_file.txt", "r")
-#        for line in f.readlines():
-#            sendText(user,line)
-#        f.close()
-#    except Exception:
-#        sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
+    try:
+        f = open("my_file.txt", "r")
+        for line in f.readlines():
+            sendText(user,line)
+        f.close()
+    except Exception:
+        sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
     
     return '',200
 
