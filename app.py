@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     a=os.environ['Authorization']
     try:
-        f = open("my_file.txt", "r")
+        f = open("student.csv", "r")
         for line in f.readlines():
 #            print(line)
             return line
@@ -36,7 +36,7 @@ def callback():
 #    sendText(user,"ไม่บ้าน้าาา")
 #    sendText(user,userText)
     try:
-        f = open("my_file.txt", "r")
+        f = open("student.csv", "r")
         for line in f.readlines():
             sendText(user,line)
         f.close()
