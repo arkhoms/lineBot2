@@ -12,7 +12,7 @@ def index():
         f = open("student.csv", "r")
         for line in f.readlines():
 #            print(line)
-            return line
+            return line.split(",")
         f.close()
     except Exception:
         return "Could not read to file"
