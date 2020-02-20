@@ -13,7 +13,7 @@ def index():
         for line in f.readlines():
 #            print(line)
             a = line.split(",")
-            return a
+            return a[0]
         f.close()
     except Exception:
         return "Could not read to file"
