@@ -38,7 +38,7 @@ def callback():
     try:
         f = open("student.csv", "r")
         for line in f.readlines():
-            sendText(user,line)
+            sendText(user,line.split(","))
         f.close()
     except Exception:
         sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
