@@ -35,7 +35,7 @@ def callback():
 #    userText = decoded["events"][0]['message']['text']
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
-    userAction = decoded['queryResult']['parameters']['number']
+    userAction = decoded['queryResult']['parameters']['studentId']
 #    sendText(user,"ไม่บ้าน้าาา")
     sendText(user,userText+" "+userAction)
     try:
