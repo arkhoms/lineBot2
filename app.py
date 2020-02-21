@@ -42,6 +42,7 @@ def callback():
             a = line.split(",")
             if(userAction==a[0]):
                 nameList=nameList+", "+a[4]
+                sendText(user,nameList)
         f.close()
         sendText(user,nameList)
     except Exception:
