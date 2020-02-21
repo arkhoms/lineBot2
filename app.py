@@ -36,18 +36,21 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
-    try:
-        f = open("student.csv", "r")
-        for line in f.readlines():
-            a = line.split(",")
-            if(userAction==a[0]):
-#                nameList=nameList+", "+a[4]
-                sendText(user,a[4])
-        f.close()
-#        sendText(user,nameList)
-    except Exception:
-        sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
-    
+    if(userText=="ถามชื่อ"):
+        try:
+            f = open("student.csv", "r")
+            for line in f.readlines():
+                a = line.split(",")
+                if(userAction==a[0]):
+#                   nameList=nameList+", "+a[4]
+                    sendText(user,a[4])
+            f.close()
+#           sendText(user,nameList)
+        except Exception:
+            sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
+    elif(userText=="ไอ้บ้า"):
+        sendText(user,"ไม่บ้านะ")
+
     return '',200
 
 def sendText(user, text):
