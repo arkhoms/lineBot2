@@ -58,8 +58,6 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
-#    user = decoded["events"][0]['replyToken']
-#    userText = decoded["events"][0]['message']['text']
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
