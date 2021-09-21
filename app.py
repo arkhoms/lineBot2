@@ -60,7 +60,6 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
-    userAction = decoded['queryResult']['parameters']['studentId']
     if(userText=="ถามชื่อ"):
         sendText(user,"น้องฟ้าจ้าาา")
 
